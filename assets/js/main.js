@@ -1,5 +1,5 @@
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -39,28 +39,28 @@
    * Navbar links active state on scroll
    */
   let navbarlinks = select('#navbar .scrollto', true)
-  
+
   const navbarlinksActive = () => {
-    let position = window.scrollY +200
-   
-    
-   
-    
+    let position = window.scrollY + 200
+
+
+
+
     navbarlinks.forEach(navbarlink => {
       if (!navbarlink.hash) return
       let section = select(navbarlink.hash)
       if (!section) return
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        if(section.id == 'about'){
-          if (window.counted); 
-         else{
-          
-          let counts = [new CountUp('twitter-count',60000), new CountUp('yt-count',2000), new CountUp('insta-count',1000), new CountUp('tel-count',8000)]
-          counts.map((e)=>{
-            e.start()
-          })
-         
-          window.counted = true
+        if (section.id == 'about') {
+          if (window.counted);
+          else {
+
+            let counts = [new CountUp('twitter-count', 60000), new CountUp('yt-count', 2000), new CountUp('insta-count', 1000), new CountUp('tel-count', 8000)]
+            counts.map((e) => {
+              e.start()
+            })
+
+            window.counted = true
           }
         }
         navbarlink.classList.add('active')
@@ -121,7 +121,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -130,7 +130,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -140,7 +140,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -171,9 +171,9 @@
   /**
    * Initiate portfolio lightbox 
    */
- 
 
-  
+
+
 
   /**
    * Animation on scroll
@@ -188,3 +188,58 @@
   });
 
 })()
+const Alert = (type,message)=>{
+document.getElementsByClassName('alert-above')[0].innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+${message}
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>`
+}
+setTimeout(()=>{
+  document.getElementsByClassName('alert-above')[0].innerHTML = ''
+},15000)
+document.getElementById('contactForm').addEventListener('submit',(e)=>{
+  e.preventDefault()
+  let data = {}
+ 
+ let array = document.forms.contactForm.elements;
+ array[3].disabled = true;
+
+ for (let index = 0; index < 3; index++) {
+   
+   const element = array[index];
+   element.disabled = true
+   data[element.name] = element.value
+  
+ }
+ fetch('https://breakout-charts-default-rtdb.firebaseio.com/messages.json',{
+  method:'POST',
+  body:JSON.stringify(data),
+  headers:{
+    "Content-Type":"application/json"
+  },
+  
+
+}).then((e)=>{
+ Alert('success','Your Message Was Successfully Send!')
+ array[3].disabled = false
+ for (let index = 0; index < 3; index++) {
+   
+  const element = array[index];
+  element.disabled = false
+  element.value = ''
+ 
+}
+}).catch((e)=>{
+  Alert('danger','Something Went Wrong!')
+  array[3].disabled = false
+ for (let index = 0; index < 3; index++) {
+   
+  const element = array[index];
+  element.disabled = false
+  element.value = ''
+ 
+}
+})
+  
+
+})
