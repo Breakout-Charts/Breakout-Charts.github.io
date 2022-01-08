@@ -55,7 +55,7 @@
           if (window.counted);
           else {
 
-            let counts = [new CountUp('twitter-count', 60000,{suffix:"+"}), new CountUp('yt-count', 2000,{suffix:"+"}), new CountUp('insta-count', 1000,{suffix:"+"}), new CountUp('tel-count', 8000,{suffix:"+"})]
+            let counts = [new CountUp('twitter-count', 60000,{suffix:"+"}), new CountUp('yt-count', 2000,{suffix:"+"}), new CountUp('insta-count', 2000,{suffix:"+"}), new CountUp('tel-count', 8000,{suffix:"+"})]
             counts.map((e) => {
               e.start()
             })
