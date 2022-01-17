@@ -220,7 +220,7 @@ document.getElementById('contactForm').addEventListener('submit',(e)=>{
   
 
 }).then((e)=>{
- Alert('success','Your Message Was Successfully Send!')
+ Alert('success','Your Message Was Successfully Sent!')
  array[3].disabled = false
  for (let index = 0; index < 3; index++) {
    
