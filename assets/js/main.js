@@ -1,4 +1,5 @@
 
+
 (function () {
   "use strict";
 
@@ -13,7 +14,13 @@
       return document.querySelector(el)
     }
   }
-
+  window.onload = ()=>{
+    setTimeout(()=>{
+      document.querySelector('.main_content').style.display = 'block'
+      document.querySelector('.loader-screen').style.display = 'none'
+    },500)
+  
+  }
   /**
    * Easy event listener function
    */
@@ -102,21 +109,7 @@
     onscroll(document, headerScrolled)
   }
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
+ 
 
   /**
    * Mobile nav toggle
