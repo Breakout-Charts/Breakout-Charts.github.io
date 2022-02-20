@@ -34,9 +34,8 @@
   <link rel="preconnect stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   
   
-
   
-  <link href="https://cdn.jsdelivr.net/gh/Breakout-Charts/frontend@master/assets/css/style.css" rel="preconnect stylesheet">
+  <link href="assets/css/style.css" rel="preconnect stylesheet">
 
   
 </head>
@@ -86,13 +85,13 @@
    
   </header>
   
-<div class="main_content">
+<div class="main_content" >
   
   <section id="hero">
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-right">
           <div>
             <h1 class="hero-head">We identify equity stocks which can give you good returns</h1>
             <h2 class="hero-desc">We’re a team of professional Chartered Accountants having experience of over 5+ years  in stock markets. </h2>
@@ -117,7 +116,7 @@
     <section id="about" class="services section-bg">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-right">
+        <div class="section-title" data-aos="zoom-out">
           <h2>About</h2>
           <p>We’re a team of professional Chartered Accountants having experience of over 5+ year in stock markets, Our goal is to identify equity stocks which can give you good returns in short to medium term. Join us for understand the outlook of various stocks</p>
         </div>
@@ -158,24 +157,34 @@
         </div>
 
       </div>
-    </section>
+    
 
-    <section id="cta" class="cta mt-3">
-      <div class="container">
-
-        <div class="row aos-init aos-animate">
-          <div class="col-lg-12 text-center text-lg-start">
-            <h3 class="text-center">Our App</h3>
-            <p class="text-center">We’re a team of professional Chartered Accountants having experience of over 5+ years in stock markets.</p>
-          </div>
-          <div class="btn-row-cta">
-           <h4>Comming Soon!</h4>
-          </div>
+  
+      
+    <section id="cta" class="cta mt-4" data-aos="zoom-in">
+     
+      <div class="news mt-4 mb-3 ">
+        <div class="container">
+          <h2 class="cta-header">Our Newsletter</h2>
+          <p class="des how-de">We’ll be starting newsletter which will be covering few index and stocks for the coming weeks </p>
+  
+          <form action="https://www.getrevue.co/profile/BreakoutCharts/add_subscriber"
+          method="post"
+        
+          target="_blank">
+            <input type="email" id="emailNews"  name="member[email]"  maxlength="50" required placeholder="example@example.com">
+            <button class="bt" name="member[subscribe]" type="submit">Subscribe</button>
+  
+  
+  
+          </form>
         </div>
-
       </div>
     </section>
   
+      
+        
+    </section>
 
     <section id="contact" class="contact section-bg">
       <div class="container">
@@ -242,7 +251,7 @@
       <div class="credits">
        
        
-        Developed By Daksh. Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Developed by <a target="_blank" href="https://github.com/kdaksh">Daksh</a>. Designed by <a target="_blank" href="https://bootstrapmade.com/">BootstrapMade</a>
        </div>
     </div>
   </footer>
@@ -255,12 +264,11 @@
 
  
 
- 
-  <script src="https://cdn.jsdelivr.net/gh/Breakout-Charts/frontend@master/assets/vendor/countUp.js/main.js" ></script>
+  <script src="assets/vendor/countUp.js/main.js" ></script>
  
 
   
-  <script src="https://cdn.jsdelivr.net/gh/Breakout-Charts/frontend@master/assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

@@ -18,6 +18,12 @@
     setTimeout(()=>{
       document.querySelector('.main_content').style.display = 'block'
       document.querySelector('.loader-screen').style.display = 'none'
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      })
     },500)
   
   }
@@ -171,22 +177,15 @@
   /**
    * Animation on scroll
    */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
-  });
+ 
 
 })()
-const Alert = (type,message)=>{
-document.getElementsByClassName('alert-above')[0].innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
-${message}
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>`
-}
+// const Alert = (type,message)=>{
+// document.getElementsByClassName('alert-above')[0].innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+// ${message}
+// <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+// </div>`
+// }
 setTimeout(()=>{
   document.getElementsByClassName('alert-above')[0].innerHTML = ''
 },15000)
