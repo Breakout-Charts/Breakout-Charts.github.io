@@ -31,10 +31,10 @@
             if (window.counted);
             else {
               [
-                new CountUp("twitter-count", 70000, { suffix: "+" }),
-                new CountUp("yt-count", 4000, { suffix: "+" }),
-                new CountUp("insta-count", 2000, { suffix: "+" }),
-                new CountUp("tel-count", 9000, { suffix: "+" }),
+                new CountUp("twitter-count", 80000, { suffix: "+" }),
+                new CountUp("yt-count", 2000, { suffix: "+" }),
+                new CountUp("insta-count", 2700, { suffix: "+" }),
+                new CountUp("tel-count", 3700, { suffix: "+" }),
               ].map((e) => {
                 e.start();
               }),

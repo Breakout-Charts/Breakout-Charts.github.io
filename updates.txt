@@ -1,6 +1,4 @@
-**Last Update: 25-02-22**
+**Last Update: 22-05-22**
 
 List Of Updates
-1. Added Newsletter Section & Removed App Coming Soon Section
-2. Updated Follower Count
-3. Changed Loader & scrollbar color
+1. Updated Follower Count & Fixed Links
