@@ -1,4 +1,5 @@
-**Last Update: 22-05-22**
+**Last Update: 04-07-22**
 
 List Of Updates
-1. Updated Follower Count & Fixed Links
+1. Updated Css File & errors
+2. 
