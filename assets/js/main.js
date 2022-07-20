@@ -1,21 +1,24 @@
 !(function () {
   "use strict";
+
   const e = (e, t = !1) => (
     (e = e.trim()),
     t ? [...document.querySelectorAll(e)] : document.querySelector(e)
   );
   window.onload = () => {
+    (window.prod = (window.location.href == 'https://breakoutcharts.in/') ? true : false),
+      (console.log("production: ",window.prod)),
     (document.querySelector(".main_content").style.display = "block"),
       (document.querySelector(".loader-screen").style.display = "none"),
       AOS.init({ duration: 1e3, easing: "ease-in-out", once: !0, mirror: !1 });
   };
   const t = (t, o, s, n = !1) => {
-      let a = e(o, n);
-      a &&
-        (n
-          ? a.forEach((e) => e.addEventListener(t, s))
-          : a.addEventListener(t, s));
-    },
+    let a = e(o, n);
+    a &&
+      (n
+        ? a.forEach((e) => e.addEventListener(t, s))
+        : a.addEventListener(t, s));
+  },
     o = (e, t) => {
       e.addEventListener("scroll", t);
     };
@@ -70,7 +73,7 @@
       function (t) {
         e("#navbar").classList.contains("navbar-mobile") &&
           (t.preventDefault(),
-          this.nextElementSibling.classList.toggle("dropdown-active"));
+            this.nextElementSibling.classList.toggle("dropdown-active"));
       },
       !0
     ),
@@ -97,9 +100,7 @@
         a(window.location.hash);
     });
 })(),
-  setTimeout(() => {
-    document.getElementsByClassName("alert-above")[0].innerHTML = "";
-  }, 15e3),
+
   document.getElementById("contactForm").addEventListener("submit", (e) => {
     e.preventDefault();
     let t = {},
@@ -109,24 +110,31 @@
       const s = o[e];
       (s.disabled = !0), (t[s.name] = s.value);
     }
-    fetch("https://breakout-charts-default-rtdb.firebaseio.com/messages.json", {
-      method: "POST",
-      body: JSON.stringify(t),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((e) => {
-        Alert("success", "Your Message Was Successfully Sent!"),
-          (o[3].disabled = !1);
-        for (let e = 0; e < 3; e++) {
-          const t = o[e];
-          (t.disabled = !1), (t.value = "");
-        }
+    t.timeSent = new Date().toString();
+    console.log(t);
+    if (window.prod) {
+
+
+      fetch("https://breakout-charts-default-rtdb.firebaseio.com/messages.json", {
+        method: "POST",
+        body: JSON.stringify(t),
+        headers: { "Content-Type": "application/json" },
       })
-      .catch((e) => {
-        Alert("danger", "Something Went Wrong!"), (o[3].disabled = !1);
-        for (let e = 0; e < 3; e++) {
-          const t = o[e];
-          (t.disabled = !1), (t.value = "");
-        }
-      });
+        .then((e) => {
+
+          alert("Your Message Was Successfully Sent!"),
+            (o[3].disabled = !1);
+          for (let e = 0; e < 3; e++) {
+            const t = o[e];
+            (t.disabled = !1), (t.value = "");
+          }
+        })
+        .catch((e) => {
+          alert("Something Went Wrong!"), (o[3].disabled = !1);
+          for (let e = 0; e < 3; e++) {
+            const t = o[e];
+            (t.disabled = !1), (t.value = "");
+          }
+        });
+    }
   });
