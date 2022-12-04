@@ -1,5 +1,6 @@
-**Last Update: 20-07-22**
+**Last Update: 04-12-2022**
 
 List Of Updates
-1. Updated JS FORM ERRORS
+1. Updated Social Media Follower Counts
+2. Added Last Modified Text In Footer
 

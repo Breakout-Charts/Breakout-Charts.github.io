@@ -12,6 +12,7 @@
       (document.querySelector(".loader-screen").style.display = "none"),
       AOS.init({ duration: 1e3, easing: "ease-in-out", once: !0, mirror: !1 });
   };
+  document.querySelector("#lastModified").innerHTML = document.lastModified
   const t = (t, o, s, n = !1) => {
     let a = e(o, n);
     a &&
@@ -34,10 +35,10 @@
             if (window.counted);
             else {
               [
-                new CountUp("twitter-count", 80000, { suffix: "+" }),
-                new CountUp("yt-count", 2000, { suffix: "+" }),
-                new CountUp("insta-count", 2700, { suffix: "+" }),
-                new CountUp("tel-count", 3700, { suffix: "+" }),
+                new CountUp("twitter-count", 89000, { suffix: "+" }),
+                new CountUp("yt-count", 3700, { suffix: "+" }),
+                new CountUp("insta-count", 3000, { suffix: "+" }),
+                new CountUp("tel-count", 6000, { suffix: "+" }),
               ].map((e) => {
                 e.start();
               }),
